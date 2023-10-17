@@ -6,7 +6,7 @@
 #    By: lfranco <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/14 11:53:58 by lfranco           #+#    #+#              #
-#    Updated: 2023/10/16 14:08:43 by lfranco          ###   ########.fr        #
+#    Updated: 2023/10/17 04:56:42 by lfranco          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ CFLAGS = -Wall -Wextra -Werror
 
 OBJS = $(SRCS:.c=.o)
 
-SRCS = libftTest.c
+
+SRCS = teste.c
 
 .c.o:
 	$(CC) $(CFLAGS) -I . -c $< -o $@

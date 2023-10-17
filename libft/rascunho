@@ -12,8 +12,8 @@ ft_memcmp
 ft_memcpy **FEITA
 ft_memmove 
 ft_memset **FEITA
-ft_putchar_fd 
-ft_putendl_fd  
+ft_putchar_fd **FEITA
+ft_putendl_fd **FEITA 
 ft_putnbr_fd 
 ft_putstr_fd 
 ft_split 

@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/14 17:29:41 by lfranco           #+#    #+#             */
-/*   Updated: 2023/10/17 05:42:52 by lfranco          ###   ########.fr       */
+/*   Created: 2023/10/17 05:03:16 by lfranco           #+#    #+#             */
+/*   Updated: 2023/10/17 05:03:38 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <ctype.h>
-#include <string.h>
-#include <stdio.h>
-#include <fcntl.h>
 
-int main(void)
+void	ft_putchar_fd(char c,  int fd)
 {
-	int fd = open("ft_putendl_fd", 'a');
-	ft_putendl_fd("lalalal", 1);
-	close(fd);
-	return (0);
+	write(fd, &c, 1);
 }
