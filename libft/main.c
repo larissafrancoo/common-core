@@ -6,16 +6,37 @@
 /*   By: lfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 17:29:41 by lfranco           #+#    #+#             */
-/*   Updated: 2023/10/16 20:14:11 by lfranco          ###   ########.fr       */
+/*   Updated: 2023/10/17 04:00:19 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//ft_isothers
 #include "libft.h"
 #include <ctype.h>
 #include <string.h>
 #include <stdio.h>
-/*
+
+int main(void)
+{
+	int i;
+	printf("CRIADA\n");
+	char d[] = "lalalal";
+	char s[] = "";
+	printf("%s\n", s);
+	ft_memcpy(d, s, 4);
+	for (i = 0; i < 4; i++)
+		printf("%c\n", s[i]);
+
+	printf("\nORIGINAL\n");
+	char d1[] = "lalalal";
+	char s1[] = "";
+	memcpy(d1, s1, 4);
+	for (i = 0; i < 4; i++)
+		printf("%c\n", s1[i]);
+	return (0);
+}
+
+/*FUNÇÕES FT_IS:
+
 size_t	lala(char *c)
 {
 	size_t a;
@@ -31,16 +52,11 @@ size_t	lolo(char *o)
 	printf("%zu\n", a);
 	return (a);	
 }
-*/
-void *memset(void *s, int c, size_t n);
-
+	
 int main(void)
 {
-	char *a = "lalalalala";
 	printf("ORIGINAL\n");
-	memset(a, 90, 2);
-	printf("%s\n", a);
-/*	printf("\nResult upercase: ");
+	printf("\nResult upercase: ");
 	lolo('A');
 	printf("\nResult number: ");
 	lolo('9');
@@ -65,6 +81,7 @@ int main(void)
 	printf("\nResult non-print: ");
 	lala('\n');
 	printf("\nResult non-ascii: ");
-	lala(128);*/
+	lala(128);
 	return (0);
 }
+*/
