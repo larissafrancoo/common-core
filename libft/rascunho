@@ -15,17 +15,17 @@ ft_memset **FEITA
 ft_putchar_fd **FEITA
 ft_putendl_fd **FEITA 
 ft_putnbr_fd 
-ft_putstr_fd 
+ft_putstr_fd **FEITA
 ft_split 
 ft_strchr 
-ft_strdup 
+ft_strdup **FAZENDO
 ft_strjoin 
 ft_strlcat 
 ft_strlcpy 
 ft_strlen **FEITA
 ft_strmapi 
 ft_striteri 
-ft_strncmp 
+ft_strncmp **FEITA
 ft_strnstr 
 ft_strrchr 
 ft_strtrim 
