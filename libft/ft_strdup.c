@@ -6,47 +6,25 @@
 /*   By: lfranco <lfranco@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 21:42:26 by lfranco           #+#    #+#             */
-/*   Updated: 2023/10/17 22:27:30 by lfranco          ###   ########.fr       */
+/*   Updated: 2023/10/18 14:29:03 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	lari_strlen(const char *str)
-{
-	int	len;
-
-	len = 0;
-	while (*str)
-		len++;
-	return (len);
-}
-
 char	*ft_strdup(const char *s)
 {
-	int	len;
-	int	i;
-	const char	*dup;
+	int		len;
+	int		i;
+	char	*dup;
 
 	i = 0;
-	len = lari_strlen(s);
-	dup = (const char *) malloc(len * sizeof(const char));
-	while (s[i] != '\0')
+	len = ft_strlen(s);
+	dup = (char *) malloc(len * sizeof(char));
+	while (i != len)
 	{
-		s[i] = dup[i];
+		dup[i] = s[i];
 		i++;
 	}
 	return (dup);
-}
-int	main(void)
-{
-	#include <stdio.h>
-	int i = 0;
-	const char str[6] = {'a', 'a', 'a', '1', '1', '1'};
-	while (str[i] < 6)
-	{
-		printf("%c", str[i]);
-	}
-	printf ("\n");
-	return (0);
 }
