@@ -3,32 +3,37 @@ ft_isalpha **FEITA
 ft_isascii **FEITA
 ft_isdigit **FEITA
 ft_isprint **FEITA
+
 ft_atoi **FEITA 
 ft_bzero **FEITA
-ft_calloc 
+ft_calloc **ESTUDAR MAIS
 ft_itoa 
-ft_memchr 
-ft_memcmp 
+
+ft_memchr **
+ft_memcmp **
 ft_memcpy **FEITA
-ft_memmove 
+ft_memmove **Ela é igual a strcpy com a diferença de que, caso a dest seja maior, parte da dest ainda fica.
 ft_memset **FEITA
+
 ft_putchar_fd **FEITA
 ft_putendl_fd **FEITA 
-ft_putnbr_fd 
+ft_putnbr_fd **
 ft_putstr_fd **FEITA
+
 ft_split **A FAZER
-ft_strchr 
+ft_strchr **
 ft_strdup **FEITA
 ft_strjoin 
-ft_strlcat 
-ft_strlcpy 
+ft_strlcat **
+ft_strlcpy **
 ft_strlen **FEITA
 ft_strmapi 
 ft_striteri 
 ft_strncmp **CORRIGIR
-ft_strnstr 
-ft_strrchr 
+ft_strnstr ** 
+ft_strrchr **
 ft_strtrim 
 ft_substr 
+
 ft_tolower **FEITA
 ft_toupper **FEITA
