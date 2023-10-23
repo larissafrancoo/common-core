@@ -10,7 +10,7 @@ ft_calloc **ESTUDAR MAIS
 ft_itoa 
 
 ft_memchr **
-ft_memcmp **
+ft_memcmp **FEITA
 ft_memcpy **FEITA
 ft_memmove **Ela é igual a strcpy com a diferença de que, caso a dest seja maior, parte da dest ainda fica.
 ft_memset **FEITA
@@ -23,7 +23,7 @@ ft_putstr_fd **FEITA
 ft_split **A FAZER
 ft_strchr **
 ft_strdup **FEITA
-ft_strjoin 
+ft_strjoin **FEITA
 ft_strlcat **
 ft_strlcpy **
 ft_strlen **FEITA
@@ -33,7 +33,7 @@ ft_strncmp **CORRIGIR
 ft_strnstr ** 
 ft_strrchr **
 ft_strtrim 
-ft_substr 
+ft_substr **FEITA
 
 ft_tolower **FEITA
 ft_toupper **FEITA

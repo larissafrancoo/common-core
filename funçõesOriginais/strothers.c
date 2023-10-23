@@ -6,7 +6,7 @@
 /*   By: lfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 10:32:06 by lfranco           #+#    #+#             */
-/*   Updated: 2023/10/20 15:57:51 by lfranco          ###   ########.fr       */
+/*   Updated: 2023/10/23 10:07:10 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-/*TESTE STRNSTR
+//TESTE STRNSTR
 int main(void)
 {
 	int len = 9;
@@ -24,9 +24,9 @@ int main(void)
      	char *str;
 
 	str = strnstr(big, little, len);
-	printf("%s\n", str);
+	printf("%s \n", str);
 	return (0);
-}*/
+}
 /*TESTE STRCHR & STRRCHR
 int main(void)
 {
