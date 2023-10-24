@@ -6,7 +6,7 @@
 /*   By: lfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 14:52:25 by lfranco           #+#    #+#             */
-/*   Updated: 2023/10/23 20:18:54 by lfranco          ###   ########.fr       */
+/*   Updated: 2023/10/23 21:23:42 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	i = 0;
 	x = 0;
 	dup = (char *) malloc((ft_strlen(s1) + ft_strlen(s2)) * (sizeof(char) + 1));
-	if(!dup)
+	if (!dup)
 		return (NULL);
 	while (s1[i] != '\0')
 	{

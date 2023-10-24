@@ -6,7 +6,7 @@
 /*   By: lfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 15:28:54 by lfranco           #+#    #+#             */
-/*   Updated: 2023/10/23 20:20:03 by lfranco          ###   ########.fr       */
+/*   Updated: 2023/10/23 21:22:29 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	ret[o] = '\0';
 	return (ret);
 }
-
+/*
 #include <stdio.h>
 int main(void)
 {
@@ -44,4 +44,4 @@ int main(void)
 	printf("%s \n", lalal);
 	free(lalal);
 	return (0);
-}
+}*/
