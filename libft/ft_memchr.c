@@ -1,42 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfranco <lfranco@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 19:29:01 by lfranco           #+#    #+#             */
-/*   Updated: 2023/10/24 14:12:13 by lfranco          ###   ########.fr       */
+/*   Created: 2023/10/24 13:49:20 by lfranco           #+#    #+#             */
+/*   Updated: 2023/10/24 13:50:27 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t	i;
+	char	*s2;
 
 	i = 0;
+	s2 = (char *) s;
 	while (i < n)
 	{
-		if ((s1[i] == s2[i]) && (s1[i] != '\0' || s2[i] != '\0'))
-			i++;
-		else
-			return (s1[i] - s2[i]);
+		if (s2[i] == c)
+			return (&s2[i]);
+		i++;
 	}
-	return (0);
+	return (NULL);
 }
 /*
-#include <stdio.h>
 #include <string.h>
-
+#include <stdio.h>
 int main(void)
 {
-	char	*la = "abcdefgh";
-	char	*ri = "";
-	int	s = 0;
+	char *s = "larissa testando a função";
+	int c = 'a';
+	int n = 2;
 
-	printf("Jack Sparrow: %d\n", ft_strncmp(la, ri, s));
-	printf("Original: %d\n", strncmp(la, ri, s));
+	printf("Original: %s \n", (char *) ft_memchr(s, c, n));
+	printf("Jack Sparrow: %s \n", (char *) memchr(s, c, n));
 	return (0);
 }*/
