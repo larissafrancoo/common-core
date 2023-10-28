@@ -1,7 +1,5 @@
 P1
 
-ft_calloc; //ACHO QUE CONSIGO CAZER SE EU ESTUDAR MAIS.
-
 ft_memmove; //NÃO SEI COMO FUNCIONA.
 
 ft_strlcat; 
@@ -11,7 +9,6 @@ ft_strlcpy;
 //ENTÃO DEIXEI-A PARA FAZER DEPOIS QUE EU PEDIR AJUDA.
 
 ft_strnstr; //NÃO ENTENDI COMO FUNCIONA.
-
 
 
 P2

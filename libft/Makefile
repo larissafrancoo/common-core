@@ -6,7 +6,7 @@
 #    By: lfranco <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/14 11:53:58 by lfranco           #+#    #+#              #
-#    Updated: 2023/10/28 05:43:20 by lfranco          ###   ########.fr        #
+#    Updated: 2023/10/28 08:21:21 by lfranco          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ CFLAGS = -Wall -Wextra -Werror
 OBJS = $(SRCS:.c=.o)
 
 SRCS = ft_putchar_fd.c\
+	ft_calloc.c\
 	ft_atoi.c\
 	ft_isdigit.c\
 	ft_strdup.c\

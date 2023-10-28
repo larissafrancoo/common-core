@@ -6,7 +6,7 @@
 /*   By: lfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 17:39:21 by lfranco           #+#    #+#             */
-/*   Updated: 2023/10/28 05:44:05 by lfranco          ###   ########.fr       */
+/*   Updated: 2023/10/28 08:22:14 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
+void	*ft_calloc(size_t nmemb, size_t size);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putstr_fd(char *s, int fd);
