@@ -6,7 +6,7 @@
 #    By: lfranco <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/14 11:53:58 by lfranco           #+#    #+#              #
-#    Updated: 2023/10/27 14:47:20 by lfranco          ###   ########.fr        #
+#    Updated: 2023/10/28 05:43:20 by lfranco          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ SRCS = ft_putchar_fd.c\
 	ft_substr.c\
 	ft_strrchr.c\
 	ft_putstr_fd.c\
+	ft_putnbr_fd.c\
 	ft_bzero.c\
 	ft_putendl_fd.c\
 	ft_memcpy.c\

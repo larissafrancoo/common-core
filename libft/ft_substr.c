@@ -6,7 +6,7 @@
 /*   By: lfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 15:28:54 by lfranco           #+#    #+#             */
-/*   Updated: 2023/10/23 21:22:29 by lfranco          ###   ########.fr       */
+/*   Updated: 2023/10/28 02:55:50 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 int main(void)
 {
 	char *s = "larissa estudando cc";
-	int str = 8;
+	int str = 2;
 	int len = 9;
 	char *lalal = ft_substr(s, str, len);
 
