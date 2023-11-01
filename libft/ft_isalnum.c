@@ -6,7 +6,7 @@
 /*   By: lfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 17:59:04 by lfranco           #+#    #+#             */
-/*   Updated: 2023/10/16 22:31:04 by lfranco          ###   ########.fr       */
+/*   Updated: 2023/10/30 03:34:12 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,17 @@
 
 int	ft_isalnum(char c)
 {
-	if (c >= 48 && c <= 57)
-		return (8);
-	else if ((c >= 97 && c <= 122)
-		|| (c >= 65 && c <= 90))
+	if (ft_isalpha(c) || ft_isdigit(c))
 		return (8);
 	return (0);
 }
+/*
+#include <stdio.h>
+int main(void)
+{
+	printf("Result Digit: %d.\n", ft_isalnum('6'));
+	printf("Result Lowcase: %d.\n", ft_isalnum('a'));
+	printf("Result Uppercase: %d.\n", ft_isalnum('H'));
+	printf("Result Non_alnum: %d.\n", ft_isalnum('+'));
+	return (0);
+}*/

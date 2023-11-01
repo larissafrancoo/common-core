@@ -6,7 +6,7 @@
 /*   By: lfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 18:56:47 by lfranco           #+#    #+#             */
-/*   Updated: 2023/10/18 13:39:22 by lfranco          ###   ########.fr       */
+/*   Updated: 2023/10/30 04:12:42 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,3 +21,11 @@ size_t	ft_strlen(const char *str)
 		len++;
 	return (len);
 }
+/*
+#include <stdio.h>
+int main(void)
+{
+	int s = ft_strlen("Vivendo e sabendo que tudo chega ao fim...");
+	printf("Jack Sparrow: %d.\n", s);
+	return (0);
+}*/
