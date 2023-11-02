@@ -6,7 +6,7 @@
 /*   By: lfranco <lfranco@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 06:39:30 by lfranco           #+#    #+#             */
-/*   Updated: 2023/11/01 07:26:58 by lfranco          ###   ########.fr       */
+/*   Updated: 2023/11/01 21:48:53 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,12 @@ int	check(const char *b, const char *l, size_t len, size_t i)
 
 	size = ft_strlen(l);
 	index = 0;
-	while (i <= len && index <= size)
+	count = 0;
+	while ((b[i] != '\0') && (i <= len) && (index <= size))
 	{
 		if (b[i] == l[index])
 			count++;
+		index++;
 		i++;
 	}
 	if (count != size)
@@ -43,6 +45,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	bi = (char *)big;
 	if (!big)
 		return (0);
+	if (little[0] == '\0')
+		return (bi);
 	while (big[i] != '\0' && i < len)
 	{
 		if (big[i] == little[0])
@@ -51,23 +55,23 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 			if (o == -1)
 				return (&bi[i]);
 		}
-		else
-			i++;
+		i++;
 	}
 	return (0);
 }
 /*
-#include <stdio.h>
 #include <bsd/string.h>
 
 int main(void)
 {
-	char *one = "Larissa gosta de chocolate";
-	char *two = "de";
-	int len = 20;
+	char *one = "Gustavo gosta de chocolate";
+	char *two = "";
+	int len = 0;
 	
 	char *ret = ft_strnstr(one, two, len);
 	printf("Jack Sparrow: %s \n", ret);
-	printf("Original: %s \n", strnstr(one, two, len));
+	char *ori = strnstr(one, two, len);
+	printf("Original    : %s \n", ori);
 	return (0);
-}*/
+}
+*/

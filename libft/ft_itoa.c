@@ -1,42 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/28 08:05:08 by lfranco           #+#    #+#             */
-/*   Updated: 2023/11/02 02:34:34 by lfranco          ###   ########.fr       */
+/*   Created: 2023/11/01 16:59:12 by lfranco           #+#    #+#             */
+/*   Updated: 2023/11/02 02:47:58 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-void	*ft_calloc(size_t nmemb, size_t size)
+int	n_len(int n)
 {
-	char	*ret;
+	int	i;
+	int	count;
 
-	ret = (char *) malloc((nmemb + 1) * size);
-	if (!ret)
-		return (NULL);
-	ft_bzero(ret, (nmemb * size));
-	return (ret);
+	i = 0;
+	count = 0;
+	if (n == 0)
+		return (1);
+	if (n < 0)
+	{
+		n *= -1;
+		count++;
+	}
+	while (n < 0)
+	{
+		n = n / 10;
+		count++;
+	}
+	return (count);
 }
-/*
+
+char	*ft_itoa(int n)
+{
+	char	*str;
+	if (n == 0)
+		str = "0";
+	if (n == -2147483648)
+		str = "-2147483648";
+if
+	return (str);
+}
 int main(void)
 {
-	int	elenu = 7;
-	int	elesize = sizeof(char);
-	int	i;
-	int	x = 48;
-	char	*ret = ft_calloc(elenu, elesize);
-	for (i = 0; i < elenu; i++)
-	{
-		ret[i] = x;
-		write (1, &ret[i], 1);
-		write (1, "\n", 1);
-		x++;
-	}
+	int nu = -2147483648;
+	char *ret = ft_itoa(nu);
+
+	printf("Result: %s \n", ret);
 	return (0);
 }
-*/

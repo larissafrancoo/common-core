@@ -6,7 +6,7 @@
 #    By: lfranco <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/14 11:53:58 by lfranco           #+#    #+#              #
-#    Updated: 2023/11/01 07:28:46 by lfranco          ###   ########.fr        #
+#    Updated: 2023/11/01 22:56:35 by lfranco          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ SRCS = 	ft_isdigit.c\
 	ft_strrchr.c\
 	ft_strlcpy.c\
 	ft_strlen.c\
+	ft_strtrim.c\
 	ft_substr.c\
 	ft_putchar_fd.c\
 	ft_putstr_fd.c\

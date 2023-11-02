@@ -1,42 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/28 08:05:08 by lfranco           #+#    #+#             */
-/*   Updated: 2023/11/02 02:34:34 by lfranco          ###   ########.fr       */
+/*   Created: 2023/11/01 22:01:27 by lfranco           #+#    #+#             */
+/*   Updated: 2023/11/01 22:55:18 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+char	*ft_strtrim(char const *s1, char const *set)
 {
+	int		i;
+	int		o;
 	char	*ret;
 
-	ret = (char *) malloc((nmemb + 1) * size);
-	if (!ret)
-		return (NULL);
-	ft_bzero(ret, (nmemb * size));
+	i = 0;
+	o = (ft_strlen(s1) - 1);
+	while (s1[i] != '\0')
+	{
+		if (ft_strchr(set, s1[i]) != NULL)
+			i++;
+		else
+			break ;
+	}
+	while (o > i)
+	{
+		if (ft_strchr(set, s1[o]) != NULL)
+			o--;
+		else
+			break ;
+	}
+	ret = ft_substr(s1, i, (++o - i));
 	return (ret);
 }
 /*
+#include <stdio.h>
 int main(void)
 {
-	int	elenu = 7;
-	int	elesize = sizeof(char);
-	int	i;
-	int	x = 48;
-	char	*ret = ft_calloc(elenu, elesize);
-	for (i = 0; i < elenu; i++)
-	{
-		ret[i] = x;
-		write (1, &ret[i], 1);
-		write (1, "\n", 1);
-		x++;
-	}
+	char *sone = "123123jacksparowwwww123";
+	char *sit = "";
+	char *ret = ft_strtrim(sone, sit);
+
+	printf("Retorno: %s \n", ret);
+	free(ret);
 	return (0);
-}
-*/
+}*/
