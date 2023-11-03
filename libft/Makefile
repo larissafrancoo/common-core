@@ -6,7 +6,7 @@
 #    By: lfranco <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/14 11:53:58 by lfranco           #+#    #+#              #
-#    Updated: 2023/11/01 22:56:35 by lfranco          ###   ########.fr        #
+#    Updated: 2023/11/03 02:56:24 by lfranco          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SRCS = 	ft_isdigit.c\
 	ft_isascii.c\
 	ft_isalpha.c\
 	ft_isprint.c\
+	ft_itoa.c\
 	ft_strchr.c\
 	ft_strdup.c\
 	ft_strjoin.c\

@@ -6,7 +6,7 @@
 /*   By: lfranco <lfranco@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 21:42:26 by lfranco           #+#    #+#             */
-/*   Updated: 2023/10/18 14:29:03 by lfranco          ###   ########.fr       */
+/*   Updated: 2023/11/02 23:31:56 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,10 @@ char	*ft_strdup(const char *s)
 	char	*dup;
 
 	i = 0;
-	len = ft_strlen(s);
+	len = (ft_strlen(s) + 1);
 	dup = (char *) malloc(len * sizeof(char));
+	if (!dup)
+		return (NULL);
 	while (i != len)
 	{
 		dup[i] = s[i];
@@ -28,3 +30,13 @@ char	*ft_strdup(const char *s)
 	}
 	return (dup);
 }
+/*
+#include <stdio.h>
+#include <string.h>
+int main(void)
+{
+	const char *s = "12345";
+	char *ret = ft_strdup(s);
+	printf ("Jack Sparrow: %s \n", ret);
+	return (0);
+}*/

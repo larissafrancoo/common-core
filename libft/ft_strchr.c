@@ -6,7 +6,7 @@
 /*   By: lfranco <lfranco@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 23:53:31 by lfranco           #+#    #+#             */
-/*   Updated: 2023/10/24 14:51:21 by lfranco          ###   ########.fr       */
+/*   Updated: 2023/11/02 22:18:28 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,13 @@ char	*ft_strchr(const char *s, int c)
 	s2 = (char *)s;
 	while (s2[i] != '\0')
 	{
-		if (s2[i] == c)
+		if (s2[i] != c)
+			i++;
+		else
 			return (&s2[i]);
-		i++;
 	}
+	if (c == '\0')
+		return (&s2[i]);
 	return (NULL);
 }
 /*
@@ -34,9 +37,9 @@ char	*ft_strchr(const char *s, int c)
 int main(void)
 {
 	char *s = "\0";
-	int c = 0;
+	int c = 'l';
 
-	printf("Jack Sparrow: %s \n", ft_strchr(s, c));
-	printf("Original: %s \n", strchr(s, c));
+	printf("Jack Sparrow: %s - Endereço: %p \n", ft_strchr(s, c), ft_strchr(s, c));
+	printf("Original    : %s - Endereço: %p \n", strchr(s, c), strchr(s, c));
 	return (0);
 }*/
