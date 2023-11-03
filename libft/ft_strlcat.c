@@ -6,7 +6,7 @@
 /*   By: lfranco <lfranco@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 05:05:21 by lfranco           #+#    #+#             */
-/*   Updated: 2023/11/03 06:09:34 by lfranco          ###   ########.fr       */
+/*   Updated: 2023/11/03 20:05:55 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,25 +32,19 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[len_d] = '\0';
 	return (len_finish);
 }
-/*
+
 #include <bsd/string.h>
 #include <stdio.h>
 int main(void)
 {
-	char d1[9] = "chocolate";
-	char d2[9] = "chocolate";
-	char *s1 = "sorvete";
-	char *s2 = "sorvete";
-	int len1 = 7;
-	int len2 = 7;
+char d = "12345678";
+	char *s = "aii";
+	size_t len = 7;
 	
-	int ret1 = strlcat(d1, s1, len1);
-	int ret2 = ft_strlcat(d2, s2, len2);
+	int ret = ft_strlcat(d, s, len);
 	
-	printf("Ret da original: %d \n", ret1);
-	printf("dst1 after: %s \n\n", d1);
+	printf("Retorno: %d \n", ret);
+	printf("dst1 after: %s \n\n", d);
 	
-	printf("Ret da Jack Sparrow: %d \n", ret2);
-	printf("dst2 after: %s \n", d2);
 	return (0);
-}*/
+}
