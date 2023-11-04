@@ -6,7 +6,7 @@
 /*   By: lfranco <lfranco@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 05:05:21 by lfranco           #+#    #+#             */
-/*   Updated: 2023/11/03 20:05:55 by lfranco          ###   ########.fr       */
+/*   Updated: 2023/11/03 20:36:23 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[len_d] = '\0';
 	return (len_finish);
 }
-
+/*
 #include <bsd/string.h>
 #include <stdio.h>
 int main(void)
@@ -47,4 +47,4 @@ char d = "12345678";
 	printf("dst1 after: %s \n\n", d);
 	
 	return (0);
-}
+}*/
