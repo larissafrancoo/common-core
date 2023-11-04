@@ -6,7 +6,7 @@
 /*   By: lfranco <lfranco@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 05:05:21 by lfranco           #+#    #+#             */
-/*   Updated: 2023/11/04 06:52:44 by lfranco          ###   ########.fr       */
+/*   Updated: 2023/11/04 19:48:11 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 
 	len_s = ft_strlen(src);
 	len_d = ft_strlen(dst);
+	len_finish = 0;
 	if (len_d > size)
 		len_finish = size + len_s;
 	else
@@ -36,9 +37,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 /*
 #include <bsd/string.h>
 #include <stdio.h>
+
 int main(void)
 {
-char d = "12345678";
+	char d = "12345678";
 	char *s = "aii";
 	size_t len = 7;
 	
