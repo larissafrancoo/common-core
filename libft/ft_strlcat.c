@@ -6,7 +6,7 @@
 /*   By: lfranco <lfranco@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 05:05:21 by lfranco           #+#    #+#             */
-/*   Updated: 2023/11/04 19:48:11 by lfranco          ###   ########.fr       */
+/*   Updated: 2023/11/04 22:15:57 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,23 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
+	size_t	i;
 	size_t	len_s;
 	size_t	len_d;
 	size_t	len_finish;
 
+	i = 0;
 	len_s = ft_strlen(src);
 	len_d = ft_strlen(dst);
-	len_finish = 0;
-	if (len_d > size)
-		len_finish = size + len_s;
+	if (len_d >= size)
+		return (size + len_s);
 	else
 		len_finish = len_d + len_s;
-	while (*src && len_d < size)
+	while (src[i] && len_d < (size - 1))
 	{
-		dst[len_d] = *src;
-		++len_d;
-		++src;
+		dst[len_d] = src[i];
+		len_d++;
+		i++;
 	}
 	dst[len_d] = '\0';
 	return (len_finish);
@@ -40,14 +41,12 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 
 int main(void)
 {
-	char d = "12345678";
-	char *s = "aii";
-	size_t len = 7;
+	char d[15] = "123456789012345";
+//	d[14] = 'a';
+	int ret = strlcat(d, "lorem ipsum dolor sit amet", 10);
 	
-	int ret = ft_strlcat(d, s, len);
-	
-	printf("Retorno: %d \n", ret);
-	printf("dst1 after: %s \n\n", d);
-	
+	printf("Retorno   : %d \n", ret);
+	printf("dst1 after: %p - %s \n\n", d, d);
+
 	return (0);
 }*/
