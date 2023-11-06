@@ -6,7 +6,7 @@
 /*   By: lfranco <lfranco@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 05:05:21 by lfranco           #+#    #+#             */
-/*   Updated: 2023/11/04 22:15:57 by lfranco          ###   ########.fr       */
+/*   Updated: 2023/11/06 10:05:04 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 
 int main(void)
 {
-	char d[15] = "123456789012345";
-//	d[14] = 'a';
-	int ret = strlcat(d, "lorem ipsum dolor sit amet", 10);
+	char d[15];
+	d[14] = 'a';
+	int ret = ft_strlcat(d, "lorem ipsum dolor sit amet", 15);
 	
 	printf("Retorno   : %d \n", ret);
 	printf("dst1 after: %p - %s \n\n", d, d);
