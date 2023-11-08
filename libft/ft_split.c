@@ -6,66 +6,96 @@
 /*   By: lfranco <lfranco@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 04:04:11 by lfranco           #+#    #+#             */
-/*   Updated: 2023/11/06 17:09:02 by lfranco          ###   ########.fr       */
+/*   Updated: 2023/11/08 04:18:39 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 # include <stdio.h>
 
-static int	w_count(const char *s, char c, int i)
+static size_t	w_len(const char *s, char c, size_t x)
 {
-	int	count;
+	size_t	count;
 
 	count = 0;
-	while (s[i] != c)
+	while (s[x] != c)
 	{
 		count++;
-		i++;
+		x++;
 	}
 	return (count);
 }
 
-static char	*w_str(const char *s, char c, int i)
+static size_t	w_count(const char *s, char c)
 {
-	int		w_len;
-	char	*string;
+	size_t	count;
+	size_t	i;
 
-	w_len = w_count(s, c, i);
-	string = ft_substr(s, i, (w_len));
-	return (string);
-}
-
-char	**ft_split(const char  *s, char c)
-{
-	int		i;
-	int		o;
-	char	**str;
-
+	count = 0;
 	i = 0;
-	o = 0;
-	while (*s)
+	while (s[i] != '\0')
 	{
 		if (s[i] == c)
 			i++;
 		else
 		{
-			str[o] = (char **) malloc((w_count(s, c, i) + 1) * sizeof(char));
-			*str = w_str(s, c, i);
-			o += i;
+			count++;
+		 	i += w_len(s, c, i);
 		}
-		s++;
 	}
+	return (count);
+}
+
+static char	*w_alloc(const char *s, char c, size_t x)
+{
+	size_t		len;
+	char	*string;
+
+	len = w_len(s, c, x);
+	string = ft_substr(s, x, len);
+	printf ("Valor de w_alloc: %s \n", string);
+	return (string);
+}
+
+char	**ft_split(const char  *s, char c)
+{
+	size_t		i;
+	size_t		o;
+	size_t		x;
+	char	**str;
+
+	i = w_count(s, c);
+	o = 0;
+	x = 0;
+	str = (char **) malloc((i + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
+	while (o < i && s[x] != '\0')
+	{
+		while (s[x] == c)
+			x++;
+		str[o] = w_alloc(s, c, x);
+		x += w_len(s, c, x);
+		o++;
+	}
+	str[o] = NULL;
 	return (str);
 }
 
 int main(void)
 {
-	char *s = "lari_jord_fran_net";
-	char c = '_';
+	char *s = ".....lari..ama.chocolate..e.acai.6.7.8.9.10.11.12.13...";
+	char c = '.';
 	char **ret = ft_split(s, c);
-	int i = 0;
+	size_t i = 0;
+	
+	size_t o = w_count(s, c);
+	printf ("\nValor de w_count: %ld \n\n", o);
 
-	printf ("\nvalor da string: |%s| \n\n", ret[i]);
+	while (i < o)
+	{
+		printf ("valor de ret: |%s|\n", ret[i]);
+		i++;
+	}
 	return (0);
 }
