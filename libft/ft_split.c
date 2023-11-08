@@ -6,7 +6,7 @@
 /*   By: lfranco <lfranco@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 04:04:11 by lfranco           #+#    #+#             */
-/*   Updated: 2023/11/08 11:37:40 by lfranco          ###   ########.fr       */
+/*   Updated: 2023/11/08 14:39:32 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static size_t	w_len(const char *s, char c, size_t x)
 	size_t	count;
 
 	count = 0;
-	while (s[x] != c)
+	while (s[x] != c && s[x] != '\0')
 	{
 		count++;
 		x++;
@@ -79,11 +79,11 @@ char	**ft_split(const char *s, char c)
 	str[o] = NULL;
 	return (str);
 }
-
+/*
 #include <stdio.h>
 int main(void)
 {
-	char *s = "lari ama lari ama lari ama";
+	char *s = "lari ama chocolate e açaí";
 	char c = ' ';
 	char **ret = ft_split(s, c);
 	size_t i = 0;
@@ -95,4 +95,4 @@ int main(void)
 		i++;
 	}
 	return (0);
-}
+}*/
