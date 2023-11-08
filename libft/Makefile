@@ -6,11 +6,11 @@
 #    By: lfranco <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/14 11:53:58 by lfranco           #+#    #+#              #
-#    Updated: 2023/11/08 11:08:01 by lfranco          ###   ########.fr        #
+#    Updated: 2023/11/08 20:53:02 by lfranco          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+NAME = libft.so
 
 CC = cc
 
@@ -59,7 +59,6 @@ SRCS = 	ft_isdigit.c\
 $(NAME): $(OBJS)
 	ar -rcs libft.a $(OBJS)
 
-	
 all: $(NAME)
 
 clean:

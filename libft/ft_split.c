@@ -6,7 +6,7 @@
 /*   By: lfranco <lfranco@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 04:04:11 by lfranco           #+#    #+#             */
-/*   Updated: 2023/11/08 14:39:32 by lfranco          ###   ########.fr       */
+/*   Updated: 2023/11/08 20:32:41 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,19 @@ static size_t	w_count(const char *s, char c)
 	return (count);
 }
 
+static void	w_free(char **str, size_t o)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < o)
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
+}
+
 static char	*w_alloc(const char *s, char c, size_t x)
 {
 	size_t	len;
@@ -65,7 +78,7 @@ char	**ft_split(const char *s, char c)
 	i = w_count(s, c);
 	o = 0;
 	x = 0;
-	str = (char **) malloc((i + 1) * sizeof(char *));
+	str = (char **) ft_calloc((i + 1), sizeof(char *));
 	if (!str)
 		return (NULL);
 	while (o < i && s[x] != '\0')
@@ -73,26 +86,34 @@ char	**ft_split(const char *s, char c)
 		while (s[x] == c)
 			x++;
 		str[o] = w_alloc(s, c, x);
+		if (str[o] == NULL)
+		{
+			w_free(str, o);
+			return (NULL);
+		}
 		x += w_len(s, c, x);
 		o++;
 	}
-	str[o] = NULL;
 	return (str);
 }
 /*
 #include <stdio.h>
 int main(void)
 {
-	char *s = "lari ama chocolate e açaí";
-	char c = ' ';
+	char *s = ".....lari..ama.chocolate..e.acai.6.7.8.9.10.11.12.13...";
+	char c = '.';
 	char **ret = ft_split(s, c);
 	size_t i = 0;
 	size_t o = w_count(s, c);
 
-	while (i < o)
+	if (ret)
 	{
-		printf ("Ret: %s \n", ret[i]);
-		i++;
+		while (i < o)
+		{
+			printf ("Ret: %s \n", ret[i]);
+			i++;
+		}
+	w_free(ret, o);
 	}
 	return (0);
 }*/
