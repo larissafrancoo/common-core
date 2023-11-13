@@ -6,11 +6,11 @@
 #    By: lfranco <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/14 11:53:58 by lfranco           #+#    #+#              #
-#    Updated: 2023/11/08 20:53:02 by lfranco          ###   ########.fr        #
+#    Updated: 2023/11/11 12:35:06 by lfranco          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.so
+NAME = libft.a
 
 CC = cc
 
@@ -53,13 +53,13 @@ SRCS = 	ft_isdigit.c\
 	ft_toupper.c\
 	ft_tolower.c\
 
+all: $(NAME)
+
 .c.o:
 	$(CC) $(CFLAGS) -I . -c $< -o $@
 
 $(NAME): $(OBJS)
 	ar -rcs libft.a $(OBJS)
-
-all: $(NAME)
 
 clean:
 	rm -f $(OBJS)
@@ -69,4 +69,7 @@ fclean : clean
 
 re : fclean all
 
+#so:
+#	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
+#	gcc -nostartfiles -shared -o libft.so $(OBJS)
 .PHONY : all clean fclean re

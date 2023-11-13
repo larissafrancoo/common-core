@@ -6,7 +6,7 @@
 /*   By: lfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 08:05:08 by lfranco           #+#    #+#             */
-/*   Updated: 2023/11/03 00:34:45 by lfranco          ###   ########.fr       */
+/*   Updated: 2023/11/10 15:46:54 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,11 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	char	*ret;
 
-	ret = (char *) malloc((nmemb + 1) * size);
+	if (nmemb == 0 || size == 0)
+		return (ft_strdup(""));
+	if (size != 0 && (nmemb * size / size) != nmemb)
+		return (NULL);
+	ret = (char *) malloc(nmemb * size);
 	if (!ret)
 		return (NULL);
 	ft_bzero(ret, (nmemb * size));

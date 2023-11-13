@@ -6,7 +6,7 @@
 /*   By: lfranco <lfranco@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 06:39:30 by lfranco           #+#    #+#             */
-/*   Updated: 2023/11/01 21:48:53 by lfranco          ###   ########.fr       */
+/*   Updated: 2023/11/09 16:44:57 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 	i = 0;
 	o = 0;
+	if ((!big || !little) && !len)
+		return (NULL);
 	bi = (char *)big;
-	if (!big)
-		return (0);
 	if (little[0] == '\0')
 		return (bi);
 	while (big[i] != '\0' && i < len)
@@ -60,8 +60,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	return (0);
 }
 /*
+#include <stdio.h>
 #include <bsd/string.h>
-
 int main(void)
 {
 	char *one = "Gustavo gosta de chocolate";
@@ -73,5 +73,4 @@ int main(void)
 	char *ori = strnstr(one, two, len);
 	printf("Original    : %s \n", ori);
 	return (0);
-}
-*/
+}*/

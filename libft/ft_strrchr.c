@@ -6,7 +6,7 @@
 /*   By: lfranco <lfranco@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 04:56:00 by lfranco           #+#    #+#             */
-/*   Updated: 2023/10/27 14:44:54 by lfranco          ###   ########.fr       */
+/*   Updated: 2023/11/10 20:54:23 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int		i;
-	char	*s2;
+	int				i;
+	unsigned char	*s2;
 
-	s2 = (char *)s;
-	i = ft_strlen(s2);
+	i = ft_strlen(s);
+	s2 = (unsigned char *)s;
 	while (i >= 0)
 	{
 		if (s2[i] != c)
 			i--;
 		else
-			return (&s2[i]);
+			return ((char *)&s2[i]);
 	}
-	return (s2 = 0);
+	return (NULL);
 }
 /*
 #include <string.h>

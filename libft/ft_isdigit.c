@@ -6,15 +6,11 @@
 /*   By: lfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 17:32:31 by lfranco           #+#    #+#             */
-/*   Updated: 2023/10/16 22:28:56 by lfranco          ###   ########.fr       */
+/*   Updated: 2023/11/10 22:04:45 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_isdigit(char c)
+int	ft_isdigit(int c)
 {
-	if (c >= 48 && c <= 57)
-		return (2048);
-	return (0);
+	return (c >= 48 && c <= 57);
 }

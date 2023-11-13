@@ -6,7 +6,7 @@
 /*   By: lfranco <lfranco@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 05:05:21 by lfranco           #+#    #+#             */
-/*   Updated: 2023/11/06 10:05:04 by lfranco          ###   ########.fr       */
+/*   Updated: 2023/11/09 12:52:53 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 
 	i = 0;
 	len_s = ft_strlen(src);
+	if (size == 0)
+		return (len_s);
 	len_d = ft_strlen(dst);
 	if (len_d >= size)
 		return (size + len_s);
@@ -41,9 +43,12 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 
 int main(void)
 {
-	char d[15];
-	d[14] = 'a';
-	int ret = ft_strlcat(d, "lorem ipsum dolor sit amet", 15);
+//	char d[15];
+//	d[14] = 'a';
+	char *d = NULL;
+	char b[0xF] = "lari !";
+//	int ret = strlcat(d, "lorem ipsum dolor sit amet", 0);
+	int ret = ft_strlcat(d, b, 0);
 	
 	printf("Retorno   : %d \n", ret);
 	printf("dst1 after: %p - %s \n\n", d, d);

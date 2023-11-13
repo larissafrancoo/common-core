@@ -6,7 +6,7 @@
 /*   By: lfranco <lfranco@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 21:42:26 by lfranco           #+#    #+#             */
-/*   Updated: 2023/11/02 23:31:56 by lfranco          ###   ########.fr       */
+/*   Updated: 2023/11/10 21:11:50 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strdup(const char *s)
 
 	i = 0;
 	len = (ft_strlen(s) + 1);
-	dup = (char *) malloc(len * sizeof(char));
+	dup = (char *) ft_calloc(len, sizeof(char));
 	if (!dup)
 		return (NULL);
 	while (i != len)

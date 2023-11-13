@@ -6,7 +6,7 @@
 /*   By: lfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 05:03:16 by lfranco           #+#    #+#             */
-/*   Updated: 2023/10/17 05:03:38 by lfranco          ###   ########.fr       */
+/*   Updated: 2023/11/10 21:58:44 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,11 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	write(fd, &c, 1);
+	if (fd >= 0)
+		write(fd, &c, 1);
 }
+/*
+int main()
+{
+	ft_putchar_fd('c', 0);
+}*/

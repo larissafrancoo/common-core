@@ -6,7 +6,7 @@
 /*   By: lfranco <lfranco@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 04:04:11 by lfranco           #+#    #+#             */
-/*   Updated: 2023/11/08 20:32:41 by lfranco          ###   ########.fr       */
+/*   Updated: 2023/11/09 10:37:11 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,18 +70,18 @@ static char	*w_alloc(const char *s, char c, size_t x)
 
 char	**ft_split(const char *s, char c)
 {
-	size_t	i;
 	size_t	o;
 	size_t	x;
 	char	**str;
 
-	i = w_count(s, c);
 	o = 0;
 	x = 0;
-	str = (char **) ft_calloc((i + 1), sizeof(char *));
+	if (!s)
+		return (NULL);
+	str = (char **) ft_calloc((w_count(s, c) + 1), sizeof(char *));
 	if (!str)
 		return (NULL);
-	while (o < i && s[x] != '\0')
+	while (o < w_count(s, c) && s[x] != '\0')
 	{
 		while (s[x] == c)
 			x++;

@@ -6,7 +6,7 @@
 /*   By: lfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 22:01:27 by lfranco           #+#    #+#             */
-/*   Updated: 2023/11/01 22:55:18 by lfranco          ###   ########.fr       */
+/*   Updated: 2023/11/10 17:10:30 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*ret;
 
 	i = 0;
+	if (!s1 || !set)
+		return (NULL);
 	o = (ft_strlen(s1) - 1);
 	while (s1[i] != '\0')
 	{
