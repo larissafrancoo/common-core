@@ -6,60 +6,70 @@
 /*   By: lfranco <lfranco@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 01:44:47 by lfranco           #+#    #+#             */
-/*   Updated: 2023/11/29 02:17:00 by lfranco          ###   ########.fr       */
+/*   Updated: 2023/11/29 19:26:59 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libftprintf.h"
 
 int	ft_printf(const char *str, ...)
 {
-	int	i;
-	int	len;
-	va_list li;
+	int		i;
+	int		len;
+	va_list	li;
 
+	if (!str)
+		return (-1);
 	i = 0;
 	len = 0;
 	va_start (li, str);
-	if (!str)
-		return (0);
 	while (str[i] != '\0')
 	{
 		while (str[i] == '%')
 		{
 			i++;
+			while (str[i] == ' ')
+				i++;
 			if (str[i] == 'c')
-				ft_putchar(va_arg(li, int));
+				len += ft_putchar(va_arg(li, int));
 			else if (str[i] == 's')
-				ft_putstr(va_arg(li, char *));
-			else if (str[i] == 'd' || str[++i] == 'i')
-				ft_putnbr(va_arg(li, int));
-//			else if (str[i] == 'p')
-//				ft_XXX(va_arg(li, void *));
-//			else if (str[i] == 'u')
-//				ft_Xxx(va_arg(li, unsigned int));
-//			else if (str[i] == 'x')
-//				ft_xxx(va_arg(li, unsigned int));
-//			else if (str[i] == 'X')
-//				ft_XxX(va_arg(li, unsigned int));
+				len += ft_putstr(va_arg(li, char *));
+			else if (str[i] == 'd' || str[i] == 'i')
+				len += ft_putnbr(va_arg(li, int));
+			else if (str[i] == 'p')
+				len += ft_putptr(va_arg(li, long unsigned int));
+			else if (str[i] == 'u')
+				len += ft_putbase(va_arg(li, unsigned int), 10, 0);
+			else if (str[i] == 'X')
+				len += ft_putbase(va_arg(li, unsigned int), 16, 1);
+			else if (str[i] == 'x')
+				len += ft_putbase(va_arg(li, unsigned int), 16, 0);
 			else if (str[i] == '%')
-				ft_putchar('%');
+				len += ft_putchar('%');
 			else
-				return (0);
+				return (-1);
 			i++;
 		}
-		ft_putchar(str[i]);
+		len += ft_putchar(str[i]);
 		i++;
 	}
 	return (len);
 }
-
+/*
+#include <stdio.h>
 int main(void)
 {
-	char c = 'x';
-	char *s = "funções";
-	int n = 20;
-	int nu = 23;
-	ft_printf("Testando %c %s em %d%i - Hexa: %% - Pointer: %% \n", c, s, n, nu);
+//	char c = 'x';
+	char *s = NULL;
+//	int n = -5;
+//	int nu = 0;
+//	int num = 2023;
+//	int hex = 47368432;
+
+	int ori = ft_printf("Orig: \n %s \n\n", s);
+	int jack = printf("Jack: \n %s \n\n", s);
+
+	printf("\n Orig: %d \n", ori);
+	printf("\n Jack: %d \n", jack);
 	return (0);
-}
+}*/
