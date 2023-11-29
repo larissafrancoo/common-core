@@ -6,7 +6,7 @@
 /*   By: lfranco <lfranco@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 00:55:53 by lfranco           #+#    #+#             */
-/*   Updated: 2023/11/29 16:42:56 by lfranco          ###   ########.fr       */
+/*   Updated: 2023/11/29 20:03:20 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 int	ft_putchar(char c)
 {
-	if (!c)
-		return (-1);
 	write(1, &c, 1);
 	return (1);
 }
@@ -52,7 +50,7 @@ int	ft_putstr(char *s)
 
 	len = 0;
 	if (!s)
-		return (-1);
+		return (ft_putstr("(null)"));
 	while (s[len] != '\0')
 		write (1, &s[len++], 1);
 	return (len);

@@ -6,11 +6,37 @@
 /*   By: lfranco <lfranco@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 01:44:47 by lfranco           #+#    #+#             */
-/*   Updated: 2023/11/29 19:26:59 by lfranco          ###   ########.fr       */
+/*   Updated: 2023/11/29 20:08:37 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
+
+static	int	ft_checker(char c, va_list li)
+{
+	int	len;
+
+	len = 0;
+	if (c == 'c')
+		len += ft_putchar(va_arg(li, int));
+	else if (c == 's')
+		len += ft_putstr(va_arg(li, char *));
+	else if (c == 'd' || c == 'i')
+		len += ft_putnbr(va_arg(li, int));
+	else if (c == 'p')
+		len += ft_putptr(va_arg(li, long unsigned int));
+	else if (c == 'u')
+		len += ft_putbase(va_arg(li, unsigned int), 10, 0);
+	else if (c == 'X')
+		len += ft_putbase(va_arg(li, unsigned int), 16, 1);
+	else if (c == 'x')
+		len += ft_putbase(va_arg(li, unsigned int), 16, 0);
+	else if (c == '%')
+		len += ft_putchar('%');
+	else
+		return (-1);
+	return (len);
+}
 
 int	ft_printf(const char *str, ...)
 {
@@ -25,32 +51,10 @@ int	ft_printf(const char *str, ...)
 	va_start (li, str);
 	while (str[i] != '\0')
 	{
-		while (str[i] == '%')
-		{
-			i++;
-			while (str[i] == ' ')
-				i++;
-			if (str[i] == 'c')
-				len += ft_putchar(va_arg(li, int));
-			else if (str[i] == 's')
-				len += ft_putstr(va_arg(li, char *));
-			else if (str[i] == 'd' || str[i] == 'i')
-				len += ft_putnbr(va_arg(li, int));
-			else if (str[i] == 'p')
-				len += ft_putptr(va_arg(li, long unsigned int));
-			else if (str[i] == 'u')
-				len += ft_putbase(va_arg(li, unsigned int), 10, 0);
-			else if (str[i] == 'X')
-				len += ft_putbase(va_arg(li, unsigned int), 16, 1);
-			else if (str[i] == 'x')
-				len += ft_putbase(va_arg(li, unsigned int), 16, 0);
-			else if (str[i] == '%')
-				len += ft_putchar('%');
-			else
-				return (-1);
-			i++;
-		}
-		len += ft_putchar(str[i]);
+		if (str[i] == '%')
+			len += ft_checker(str[++i], li);
+		else
+			len += ft_putchar(str[i]);
 		i++;
 	}
 	return (len);
@@ -59,15 +63,15 @@ int	ft_printf(const char *str, ...)
 #include <stdio.h>
 int main(void)
 {
-//	char c = 'x';
-	char *s = NULL;
+	char c = 'x';
+	char s[] = "sdpqheiodpeqipd";
 //	int n = -5;
 //	int nu = 0;
 //	int num = 2023;
 //	int hex = 47368432;
 
-	int ori = ft_printf("Orig: \n %s \n\n", s);
-	int jack = printf("Jack: \n %s \n\n", s);
+	int ori = ft_printf("Orig: \n %   c\n", c);
+	int jack = printf("Jack: \n %   c\n", c);
 
 	printf("\n Orig: %d \n", ori);
 	printf("\n Jack: %d \n", jack);
