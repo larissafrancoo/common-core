@@ -6,7 +6,7 @@
 /*   By: lfranco <lfranco@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 02:25:37 by lfranco           #+#    #+#             */
-/*   Updated: 2024/01/01 15:49:37 by lfranco          ###   ########.fr       */
+/*   Updated: 2024/01/02 03:19:10 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char	*ft_strdup(const char *s)
 
 	i = 0;
 	len = (ft_strlen(s) + 1);
-	dup = (char *) malloc(len, sizeof(char));
+	dup = (char *) malloc(len * sizeof(char));
 	if (!dup)
 		return (NULL);
 	while (i != len)
@@ -47,6 +47,7 @@ char	*ft_strdup(const char *s)
 		dup[i] = s[i];
 		i++;
 	}
+	dup[len - 1] = '\0';
 	return (dup);
 }
 
@@ -99,11 +100,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!s)
 		return (NULL);
 	if (start >= ft_strlen(s))
-		return (0);
+		return ("ERRO NA SUB");
 	ret = (char *) malloc((len + 1) * sizeof(char));
 	if (!ret)
 		return (NULL);
-	while (o < len)
+	while (o < len && s[i] != '\0')
 	{
 		ret[o] = s[i];
 		i++;
