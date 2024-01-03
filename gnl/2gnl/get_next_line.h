@@ -6,20 +6,19 @@
 /*   By: lfranco <lfranco@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 02:38:40 by lfranco           #+#    #+#             */
-/*   Updated: 2024/01/01 04:07:42 by lfranco          ###   ########.fr       */
+/*   Updated: 2024/01/03 16:07:58 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1 
+# endif
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <fnctl.h>
-
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42000
-# endif
+# include <fcntl.h>
 
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s);

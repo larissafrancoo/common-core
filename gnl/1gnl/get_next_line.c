@@ -6,7 +6,7 @@
 /*   By: lfranco <lfranco@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 02:25:18 by lfranco           #+#    #+#             */
-/*   Updated: 2024/01/01 02:31:44 by lfranco          ###   ########.fr       */
+/*   Updated: 2024/01/03 15:50:52 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static char	*line_operator(int fd, char *strline, char *save)
 	char	*temp;
 
 	rd_line = 1;
-	while (rdline != '\0')
+	while (rd_line != '\0')
 	{
 		rd_line = read(fd, strline, BUFFER_SIZE);
 		if (rd_line < 0)
