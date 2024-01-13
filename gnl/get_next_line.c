@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdio.h>
 
-static char *line_op(char *save, int fd)
+char *line_op(char *save, int fd)
 {
 	int r;
 	char *temp;
@@ -21,29 +21,35 @@ static char *line_op(char *save, int fd)
 			return (0);
 		}
 		temp[r] = '\0';
+		printf("DENTRO DO WHILE\n");
 		save = ft_strjoin(save, temp);
 	}
 	free(temp);
 	return (save);
 }
-
+/*
 static char	*save_op(line)
 {
-}
+	char	*sv;
 
+	if(!line)
+		return (0);
+
+}
 
 char	*get_next_line(int fd)
 {
 	static char	*save;
 	char	*line;
-	
-	line = line_op(save, fd);
-	save = save_op(line);
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (0);
-}
+	save = NULL;
+	line = line_op(save, fd);
 
+	save = save_op(line);
+}
+*/
 int main(void)
 {
 	int fd;

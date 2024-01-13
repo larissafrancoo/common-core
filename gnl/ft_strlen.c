@@ -6,18 +6,18 @@
 /*   By: lfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 18:56:47 by lfranco           #+#    #+#             */
-/*   Updated: 2024/01/11 06:33:52 by lfranco          ###   ########.fr       */
+/*   Updated: 2024/01/13 07:06:30 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(const char *str)
+size_t	ft_strlen(const char *str, int c)
 {
 	size_t	len;
 
 	len = 0;
-	while (str[len] != '\0')
+	while (str[len] != c)
 		len++;
 	return (len);
 }
