@@ -1,41 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 14:52:25 by lfranco           #+#    #+#             */
-/*   Updated: 2024/01/11 06:33:42 by lfranco          ###   ########.fr       */
+/*   Created: 2023/10/16 18:56:47 by lfranco           #+#    #+#             */
+/*   Updated: 2023/10/30 04:12:42 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+size_t	ft_strlen(const char *str)
 {
-	int		i;
-	int		x;
-	char	*dup;
+	size_t	len;
 
-	i = 0;
-	x = 0;
-	if (!s1 || !s2)
-		return (NULL);
-	dup = (char *) malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
-	if (!dup)
-		return (NULL);
-	while (s1[i] != '\0')
-	{
-		dup[i] = s1[i];
-		i++;
-	}
-	while (s2[x] != '\0')
-	{
-		dup[i] = s2[x];
-		x++;
-		i++;
-	}
-	dup[i] = '\0';
-	return (dup);
+	len = 0;
+	while (str[len] != '\0')
+		len++;
+	return (len);
 }
+/*
+#include <stdio.h>
+int main(void)
+{
+	int s = ft_strlen("Vivendo e sabendo que tudo chega ao fim...");
+	printf("Jack Sparrow: %d.\n", s);
+	return (0);
+}*/

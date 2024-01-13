@@ -6,9 +6,11 @@
 /*   By: lfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 18:56:47 by lfranco           #+#    #+#             */
-/*   Updated: 2024/01/10 21:14:52 by lfranco          ###   ########.fr       */
+/*   Updated: 2024/01/11 06:33:52 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "get_next_line.h"
 
 size_t	ft_strlen(const char *str)
 {
