@@ -6,8 +6,8 @@ char *ft_strjoin(char *buffer, char *line)
 	int i;
 	int a;
 
-	a = ft_strlen(buffer) + ft_strlen(line);
-	str = (char *)malloc(sizeof(char) * (a + 1));
+	str_len = ft_strlen(buffer) + ft_strlen(line)  + 1;
+	str = (char *)malloc(sizeof(char) * str_len);
 	if (!str)
 		return (NULL);
 	i = 0;

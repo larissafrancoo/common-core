@@ -21,7 +21,6 @@ char *line_op(char *save, int fd)
 			return (0);
 		}
 		temp[r] = '\0';
-		printf("DENTRO DO WHILE\n");
 		save = ft_strjoin(save, temp);
 	}
 	free(temp);
