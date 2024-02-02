@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 23:08:50 by lfranco           #+#    #+#             */
-/*   Updated: 2024/02/01 23:13:28 by lfranco          ###   ########.fr       */
+/*   Created: 2024/02/01 23:12:18 by lfranco           #+#    #+#             */
+/*   Updated: 2024/02/01 23:12:35 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 2
-# endif 
+# endif
+
+# ifndef MAX_FD
+#  define MAX_FD 1024
+# endif
 
 # include <unistd.h>
 # include <stdlib.h>

@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 23:06:00 by lfranco           #+#    #+#             */
-/*   Updated: 2024/02/01 23:09:55 by lfranco          ###   ########.fr       */
+/*   Created: 2024/02/01 23:10:09 by lfranco           #+#    #+#             */
+/*   Updated: 2024/02/01 23:11:18 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*read_buffer(int fd)
 {
 	char		*line;
-	static char	*buffer;
+	static char	*buffer[MAX_FD];
 	int			ret_read;
 
 	line = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!line)
 		return (NULL);
 	ret_read = 1;
-	while (ret_read > 0 && !find_n(buffer))
+	while (ret_read > 0 && !find_n(buffer[fd]))
 	{
 		ret_read = read(fd, line, BUFFER_SIZE);
 		if (ret_read < 0)
@@ -31,13 +31,13 @@ char	*read_buffer(int fd)
 			return (NULL);
 		}
 		line[ret_read] = '\0';
-		buffer = ft_strjoin(buffer, line);
+		buffer[fd] = ft_strjoin(buffer[fd], line);
 	}
 	free(line);
-	if (!buffer)
+	if (!buffer[fd])
 		return (NULL);
-	line = the_first_part_of(buffer);
-	buffer = the_second_part_of(buffer);
+	line = the_first_part_of(buffer[fd]);
+	buffer[fd] = the_second_part_of(buffer[fd]);
 	return (line);
 }
 
