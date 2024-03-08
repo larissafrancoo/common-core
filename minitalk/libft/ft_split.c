@@ -6,7 +6,7 @@
 /*   By: lfranco <lfranco@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 04:04:11 by lfranco           #+#    #+#             */
-/*   Updated: 2024/02/28 12:27:00 by lfranco          ###   ########.fr       */
+/*   Updated: 2024/03/08 18:48:24 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ char	**ft_split(const char *s, char c)
 	}
 	return (str);
 }
-
+/*
 #include <stdio.h>
 int main(void)
 {
@@ -117,3 +117,4 @@ int main(void)
 	}
 	return (0);
 }
+*/
