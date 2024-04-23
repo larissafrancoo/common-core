@@ -14,12 +14,13 @@
 
 int	main(int ac, char **av)
 {
+	t_node	**stack_a;
+
 	if (!checker(ac, av))
 	{
 		ft_printf("ERRO\n");
 		return (0);
 	}
-	t_node	**stack_a;
 	stack_a = (t_node **) malloc(sizeof(t_node *));
 	if (!stack_a)
 		return (0);

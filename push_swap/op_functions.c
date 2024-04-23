@@ -1,4 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   op_functions.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: larissa <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/23 18:07:37 by larissa           #+#    #+#             */
+/*   Updated: 2024/04/23 18:07:39 by larissa          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
+
+int	stk_size(t_node *head)
+{
+	int	ssize;
+
+	ssize = 0;
+	while (head)
+	{
+		ssize++;
+		head = head->next;
+	}
+	return (ssize);
+}
 
 void	push(t_node **src_stack, t_node **dest_stack)
 {
@@ -30,7 +55,7 @@ void	rotate(t_node **stack)
 
 	if (stk_size(*stack) < 2)
 		return ;
-	tail = get_last(*stack);
+	tail = last_node(*stack);
 	head = *stack;
 	*stack = (*stack)->next;
 	tail->next = head;
@@ -40,10 +65,15 @@ void	rotate(t_node **stack)
 void	rev_rotate(t_node **stack)
 {
 	t_node	*tail;
-	t_node	*back_tail;
+	t_node	*pre_tail;
 
 	if (stk_size(*stack) < 2)
 		return ;
-	back_tail = *stack;
-
+	pre_tail = *stack;
+	while (pre_tail->next->next)
+		pre_tail = pre_tail->next;
+	tail = pre_tail->next;
+	pre_tail->next = NULL;
+	tail->next = *stack;
+	*stack = tail;
 }

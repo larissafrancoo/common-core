@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_stacks.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: larissa <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/23 18:07:08 by larissa           #+#    #+#             */
+/*   Updated: 2024/04/23 18:07:31 by larissa          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	init_stack(t_node **stack, char **av)
@@ -42,24 +54,24 @@ void	index_stack(t_node **stack)
 	}
 }
 
-//essa função vai ficar junto ao "index_stack", ou seja, ela vai se tornar static a separação
+//a função abaixo vai ficar junto ao "index_stack", ou seja, ela vai se tornar static na separação
 t_node	*next_min(t_node **stack)
 {
 	t_node	*head;
 	t_node	*min;
-	int		min_flag;
+	int		flag;
 
 	head = *stack;
 	min = NULL;
-	min_flag = 0;
+	flag = 0;
 	if (head)
 	{
 		while (head)
 		{
-			if ((head->index == -1) && (!min_flag || head->number < min->number))
+			if ((head->index == -1) && (!flag || head->number < min->number))
 			{
 				min = head;
-				min_flag = 1;
+				flag = 1;
 			}
 			head = head->next;
 		}

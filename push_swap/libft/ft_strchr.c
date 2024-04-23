@@ -6,7 +6,7 @@
 /*   By: lfranco <lfranco@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 23:53:31 by lfranco           #+#    #+#             */
-/*   Updated: 2023/11/10 22:11:11 by lfranco          ###   ########.fr       */
+/*   Updated: 2024/04/23 18:00:45 by larissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,3 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)&s2[i]);
 	return (NULL);
 }
-/*
-#include <stdio.h>
-#include <string.h>
-
-int main(void)
-{
-	char *s = "\0";
-	int c = 'l';
-
-	printf("Jack Sparrow: %s - Endereço: %p \n", ft_strchr(s, c), ft_strchr(s, c));
-	printf("Original    : %s - Endereço: %p \n", strchr(s, c), strchr(s, c));
-	return (0);
-}*/

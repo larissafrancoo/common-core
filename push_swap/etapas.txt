@@ -15,10 +15,8 @@
 -> Verificar se há números duplicados; - OK
 
 2. FUNÇÕES PUSH AND POP:
--> Função push_on;
--> Função pop_on;
--> Função push_under;
--> Função pop_under;
+-> Função push_on; - OK
+-> Função push_under; - OK
 
 3. COMANDOS PEDIDOS NO PDF:
 -> sa/sb/ss
@@ -38,7 +36,7 @@
 	- rrr: rotaciona ambas empurando o ultimo item para o topo;
 
 4. INDEXAR NÚMEROS:
--> Atribuir '1' a cada numero que for maior ao outro número em que eu estiver comparando;
+-> Atribuir '1' a cada numero que for maior ao outro número em que eu estiver comparando; - OK
 
 5. ORDENAÇÃO POR FORÇA BRUTA:
 -> Listas com até 5 números faremos ordenação por força bruta;
