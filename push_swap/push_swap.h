@@ -20,12 +20,25 @@ typedef struct s_number_node
 {
 	int			index;
 	int			number;
-	struct s_list	*next;
+	struct s_number_node	*next;
 }				t_node;
 
 //struct da stack_a;
 //struct da stack_b;
 
 int	checker(int ac, char **av);
+
+//a organizar:
+
+//ft_stacks
+void	init_stack(t_node **stack, char **av);
+void	index_stack(t_node **stack);
+t_node	*next_min(t_node **stack); //esse fica junto ao index_stack.
+t_node	*node_maker(int nu);
+
+//pop_push
+t_node	*last_node(t_node *head);
+void	push_under(t_node **stack, t_node *new_node);
+void	push_on(t_node **stack, t_node *new_node);
 
 #endif

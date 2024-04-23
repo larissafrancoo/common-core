@@ -20,6 +20,7 @@ FT_PRINTF = ./ft_printf/
 
 SRCS = main.c\
        checker.c\
+       ft_stacks.c\
 
 all:	push_swap
 

@@ -10,14 +10,36 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "push_swap.h"
 
-void	push_on(t_nude	**head_list)
+t_node	*last_node(t_node *head)
 {
-	t_nude **tmp = head_list
+	if (!head)
+		return (NULL);
+	while (head->next)
+		head = head->next;
+	return (head);
 }
-void	push_under(t_nude **finu);
-void	pop_on(t_nude **finu);
-void	pop_under(t_nude **finu);
 
+void	push_on(t_node	**stack, t_node *new_node)
+{
+	if (!new_node)
+		return ;
+	new_node->next = *stack;
+	*stack = new_node;
+}
+
+void	push_under(t_node **stack, t_node *new_node)
+{
+	t_node	*tmp;
+
+	if (!new_node)
+		return ;
+	if (*stack)
+	{
+		tmp = last_node(*stack);
+		tmp->next = new_node;
+	}
+	else
+		*stack = new_node;
+}

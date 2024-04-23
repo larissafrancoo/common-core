@@ -19,6 +19,12 @@ int	main(int ac, char **av)
 		ft_printf("ERRO\n");
 		return (0);
 	}
+	t_node	**stack_a;
+	stack_a = (t_node **) malloc(sizeof(t_node *));
+	if (!stack_a)
+		return (0);
+	*stack_a = NULL;
+	init_stack(stack_a, av);
 	ft_printf("Q DELÍCIA ESSE OUTONO\n");
 	return (0);
 }
