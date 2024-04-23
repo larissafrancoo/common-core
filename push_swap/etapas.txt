@@ -1,0 +1,60 @@
+1. Tratar input;
+2. Fazer as funções de push e pop;
+3. Associar essa funções aos comandos pedidos no PDF;
+4. Indexar os números;
+5. Criar funções de ordenação por força bruta;
+6. Implementar radix;
+
+--------------------------------------------------------------------------------------------
+
+1. TRATAR INPUT:
+-> Verificar se há no mínimo 2 números; - OK
+-> Verificar se há caracteres que não são numeros no parâmetro; - OK
+-> Verificar se os números passados não ultrapassam o min/max int; - OK
+-> Verificar se a lista já está ordenada; - OK
+-> Verificar se há números duplicados; - OK
+
+2. FUNÇÕES PUSH AND POP:
+-> Função push_on;
+-> Função pop_on;
+-> Função push_under;
+-> Função pop_under;
+
+3. COMANDOS PEDIDOS NO PDF:
+-> sa/sb/ss
+	- sa: troca os dois primeiros itens da lista 'A';
+	- sb: troca os dois primeiros itens da lista 'B';
+	- ss: troca os dois primeiros itens de ambas;
+-> pa/pb
+	- pa: pega o primeiro item de 'A' e coloca no topo de 'B';
+	- pb: pega o primeiro item de 'B' e coloca no topo de 'A';
+-> ra/rb/rr
+	- ra: rotaciona 'A' empurando o primeiro item para o final;
+	- rb: rotaciona 'B' empurando o primeiro item para o final;
+	- rr: rotaciona ambas empurando o primeiro item para o final;
+-> rra/rrb/rrr
+	- rra: rotaciona 'A' empurando o ultimo item para o topo;
+	- rrb: rotaciona 'B' empurando o ultimo item para o topo;
+	- rrr: rotaciona ambas empurando o ultimo item para o topo;
+
+4. INDEXAR NÚMEROS:
+-> Atribuir '1' a cada numero que for maior ao outro número em que eu estiver comparando;
+
+5. ORDENAÇÃO POR FORÇA BRUTA:
+-> Listas com até 5 números faremos ordenação por força bruta;
+*****
+Para cada quantidade de números, temos um fatorial de possibilidades de sequencias. Logo, é certo que, no fatorial de possibilidades, uma das possibilidades será uma sequencia de números já ordenados.
+Sabendo disso, podemos excluir essa possibilidade do resultado fatorial, já não será necessário nenhuma operação para ela.
+*****
+-> Para 2 nº
+	** 2 possibilidades menos 1 sequencia que já está ordenada. Sobrando: 1 posssibilidade;
+	- movimento: sa;
+-> Para 3 nº
+	** 6 possibilidades menos 1 sequencia que já está ordenada. Sobrando: 5 posssibilidades;
+-> Para 4 nº
+	** 24 possibilidades menos 1 sequencia que já está ordenada. Sobrando: 23 posssibilidades;
+-> Para 5 nº
+	** 120 possibilidades menos 1 sequencia que já está ordenada. Sobrando: 119 posssibilidades;
+
+6. IMPLEMENTAR RADIX:
+-> O que é radix?
