@@ -6,7 +6,7 @@
 /*   By: larissa <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 18:07:08 by larissa           #+#    #+#             */
-/*   Updated: 2024/04/24 00:24:29 by larissa          ###   ########.fr       */
+/*   Updated: 2024/04/24 00:47:50 by larissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ int	min(t_node **stack, int n)
 	t_node	*head;
 	int	min_idx;
 
+	head = *stack;
 	min_idx = head->index;
 	while (head->next)
 	{

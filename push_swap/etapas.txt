@@ -1,8 +1,8 @@
-1. Tratar input;
-2. Fazer as funções de push e pop;
-3. Associar essa funções aos comandos pedidos no PDF;
-4. Indexar os números;
-5. Criar funções de ordenação por força bruta;
+1. Tratar input; - OK
+2. Fazer as funções de push e pop; - OK
+3. Associar essa funções aos comandos pedidos no PDF; - OK
+4. Indexar os números; - OK
+5. Criar funções de ordenação por força bruta; - OK
 6. Implementar radix;
 
 --------------------------------------------------------------------------------------------

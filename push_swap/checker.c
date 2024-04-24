@@ -6,7 +6,7 @@
 /*   By: lfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 16:38:29 by lfranco           #+#    #+#             */
-/*   Updated: 2024/04/23 23:52:08 by larissa          ###   ########.fr       */
+/*   Updated: 2024/04/24 01:18:06 by larissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,15 +67,15 @@ static int	check_dup_and_sort(char **av)
 			if (ft_atol(av[i]) > ft_atol(av[o]))
 				flag = 1;
 			else if (ft_atol(av[i]) == ft_atol(av[o]))
-				return (0);
+				return (1);
 			i++;
 		}
 		i = 1;
 		o++;
 	}
 	if (flag == 1)
-		return (1);
-	return (0);
+		return (0);
+	return (2);
 }
 
 void	checker_input(int ac, char **av)
@@ -88,8 +88,10 @@ void	checker_input(int ac, char **av)
 			put_error("Error");
 		else if (!(check_int_limit(av)))
 			put_error("Error");
-		else if (!(check_dup_and_sort(av)))
+		else if (check_dup_and_sort(av) == 1)
 			put_error("Error");
+		else if (check_dup_and_sort(av) == 2)
+			return ;
 	}
 }
 
