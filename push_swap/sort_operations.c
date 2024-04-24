@@ -6,13 +6,12 @@
 /*   By: larissa <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 22:32:16 by larissa           #+#    #+#             */
-/*   Updated: 2024/04/24 01:52:40 by larissa          ###   ########.fr       */
+/*   Updated: 2024/04/24 17:56:54 by larissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-//void	radix_sort(t_node **stack_a, t_node **stack_b);
 int	find_index_node(t_node **stack, int i)
 {
 	t_node	*head;
