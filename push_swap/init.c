@@ -6,7 +6,7 @@
 /*   By: larissa <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 18:07:08 by larissa           #+#    #+#             */
-/*   Updated: 2024/04/23 21:44:58 by larissa          ###   ########.fr       */
+/*   Updated: 2024/04/24 00:24:29 by larissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	index_stack(t_node **stack)
 	}
 }
 
-//a função abaixo vai ficar junto ao "index_stack", ou seja, ela vai se tornar static na separação
+//ela vai se tornar static na separação
 t_node	*next_min(t_node **stack)
 {
 	t_node	*head;
@@ -79,15 +79,16 @@ t_node	*next_min(t_node **stack)
 	return (min);
 }
 
-int	get_distance_node(t_node **stack, int i);
 int	min(t_node **stack, int n)
 {
 	t_node	*head;
+	int	min_idx;
+
 	min_idx = head->index;
 	while (head->next)
 	{
 		head = head->next;
-		if ((head->index < min_idx) && head->index != number)
+		if ((head->index < min_idx) && head->index != n)
 			min_idx = head->index;
 	}
 	return (min_idx);

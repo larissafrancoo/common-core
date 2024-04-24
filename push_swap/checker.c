@@ -6,7 +6,7 @@
 /*   By: lfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 16:38:29 by lfranco           #+#    #+#             */
-/*   Updated: 2024/04/23 20:55:23 by larissa          ###   ########.fr       */
+/*   Updated: 2024/04/23 23:52:08 by larissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,20 +78,31 @@ static int	check_dup_and_sort(char **av)
 	return (0);
 }
 
-int	checker(int ac, char **av)
+void	checker_input(int ac, char **av)
 {
 	if (ac <= 2)
-		return (0);
+		return ;
 	else
 	{
 		if (!(check_chars(av)))
-			return (0);
+			put_error("Error");
 		else if (!(check_int_limit(av)))
-			return (0);
+			put_error("Error");
 		else if (!(check_dup_and_sort(av)))
+			put_error("Error");
+	}
+}
+
+int	check_stk_sort(t_node **stack)
+{
+	t_node	*head;
+
+	head = *stack;
+	while (head->next)
+	{
+		if (head->number > head->next->number)
 			return (0);
+		head = head->next;
 	}
 	return (1);
 }
-
-int	check_stk_sort(t_node **stack);
