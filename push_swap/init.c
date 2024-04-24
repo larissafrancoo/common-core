@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stacks.c                                        :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: larissa <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 18:07:08 by larissa           #+#    #+#             */
-/*   Updated: 2024/04/23 18:07:31 by larissa          ###   ########.fr       */
+/*   Updated: 2024/04/23 21:44:58 by larissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,4 +77,18 @@ t_node	*next_min(t_node **stack)
 		}
 	}
 	return (min);
+}
+
+int	get_distance_node(t_node **stack, int i);
+int	min(t_node **stack, int n)
+{
+	t_node	*head;
+	min_idx = head->index;
+	while (head->next)
+	{
+		head = head->next;
+		if ((head->index < min_idx) && head->index != number)
+			min_idx = head->index;
+	}
+	return (min_idx);
 }

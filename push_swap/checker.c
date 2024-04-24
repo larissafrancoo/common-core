@@ -6,7 +6,7 @@
 /*   By: lfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 16:38:29 by lfranco           #+#    #+#             */
-/*   Updated: 2024/04/21 15:32:10 by lfranco          ###   ########.fr       */
+/*   Updated: 2024/04/23 20:55:23 by larissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,3 +93,5 @@ int	checker(int ac, char **av)
 	}
 	return (1);
 }
+
+int	check_stk_sort(t_node **stack);
