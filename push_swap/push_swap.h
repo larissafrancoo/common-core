@@ -6,7 +6,7 @@
 /*   By: lfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 12:12:28 by lfranco           #+#    #+#             */
-/*   Updated: 2024/04/24 17:57:51 by larissa          ###   ########.fr       */
+/*   Updated: 2024/04/24 19:24:27 by larissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 
 typedef struct s_nude
 {
-	int		index;
-	int		number;
+	int				index;
+	int				number;
 	struct s_nude	*next;
-}	t_node;
+}				t_node;
 
 void	radix_sort(t_node **stack_a, t_node **stack_b);
 void	checker_input(int ac, char **av);
