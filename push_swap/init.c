@@ -6,7 +6,7 @@
 /*   By: larissa <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 18:07:08 by larissa           #+#    #+#             */
-/*   Updated: 2024/04/24 00:47:50 by larissa          ###   ########.fr       */
+/*   Updated: 2024/04/24 02:02:10 by larissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,22 +40,7 @@ t_node	*node_maker(int nu)
 	return (node);
 }
 
-void	index_stack(t_node **stack)
-{
-	t_node	*head;
-	int		i;
-
-	i = 0;
-	head = next_min(stack);
-	while (head)
-	{
-		head->index = i++;
-		head = next_min(stack);
-	}
-}
-
-//ela vai se tornar static na separação
-t_node	*next_min(t_node **stack)
+static t_node	*next_min(t_node **stack)
 {
 	t_node	*head;
 	t_node	*min;
@@ -79,10 +64,24 @@ t_node	*next_min(t_node **stack)
 	return (min);
 }
 
+void	index_stack(t_node **stack)
+{
+	t_node	*head;
+	int		i;
+
+	i = 0;
+	head = next_min(stack);
+	while (head)
+	{
+		head->index = i++;
+		head = next_min(stack);
+	}
+}
+
 int	min(t_node **stack, int n)
 {
 	t_node	*head;
-	int	min_idx;
+	int		min_idx;
 
 	head = *stack;
 	min_idx = head->index;

@@ -6,22 +6,19 @@
 /*   By: larissa <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 22:31:39 by larissa           #+#    #+#             */
-/*   Updated: 2024/04/23 22:31:44 by larissa          ###   ########.fr       */
+/*   Updated: 2024/04/24 01:54:13 by larissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sa(t_node **stack_a)
+void	sx(t_node **stack, int c)
 {
-	swap(stack_a);
-	ft_putendl_fd("sa", 1);
-}
-
-void	sb(t_node **stack_b)
-{
-	swap(stack_b);
-	ft_putendl_fd("sb", 1);
+	swap(stack);
+	if (c == 'a')
+		ft_putendl_fd("sa", 1);
+	else if (c == 'b')
+		ft_putendl_fd("sb", 1);
 }
 
 void	ss(t_node **stack_a, t_node **stack_b)
@@ -33,14 +30,11 @@ void	ss(t_node **stack_a, t_node **stack_b)
 	ft_putendl_fd("ss", 1);
 }
 
-void	pa(t_node **stack_b, t_node **stack_a)
+void	px(t_node **stack1, t_node **stack2, int c)
 {
-	push(stack_b, stack_a);
-	ft_putendl_fd("pa", 1);
-}
-
-void	pb(t_node **stack_a, t_node **stack_b)
-{
-	push(stack_a, stack_b);
-	ft_putendl_fd("pb", 1);
+	push(stack1, stack2);
+	if (c == 'a')
+		ft_putendl_fd("pa", 1);
+	else if (c == 'b')
+		ft_putendl_fd("pb", 1);
 }
