@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   checker_input.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 16:38:29 by lfranco           #+#    #+#             */
-/*   Updated: 2024/04/24 01:18:06 by larissa          ###   ########.fr       */
+/*   Updated: 2024/04/24 12:32:29 by larissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,18 +93,4 @@ void	checker_input(int ac, char **av)
 		else if (check_dup_and_sort(av) == 2)
 			return ;
 	}
-}
-
-int	check_stk_sort(t_node **stack)
-{
-	t_node	*head;
-
-	head = *stack;
-	while (head->next)
-	{
-		if (head->number > head->next->number)
-			return (0);
-		head = head->next;
-	}
-	return (1);
 }

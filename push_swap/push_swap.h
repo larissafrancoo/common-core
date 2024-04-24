@@ -6,7 +6,7 @@
 /*   By: lfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 12:12:28 by lfranco           #+#    #+#             */
-/*   Updated: 2024/04/24 02:07:54 by larissa          ###   ########.fr       */
+/*   Updated: 2024/04/24 12:25:05 by larissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ void	ss(t_node **stack_a, t_node **stack_b);
 void	px(t_node **stack1, t_node **stack2, int c);
 void	put_error(char *m);
 void	stk_free(t_node **stack);
-void	str_free(char **str);
 void	simple_sort(t_node **stack_a, t_node **stack_b);
 int		find_index_node(t_node **stack, int i);
 

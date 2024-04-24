@@ -6,7 +6,7 @@
 #    By: lfranco <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/21 12:01:01 by lfranco           #+#    #+#              #
-#    Updated: 2024/04/24 02:24:05 by larissa          ###   ########.fr        #
+#    Updated: 2024/04/24 12:32:00 by larissa          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,13 +18,13 @@ RM	= rm -f
 LIBRARY = ./libft/
 
 SRCS = main.c\
-       free_error.c\
-       checker.c\
+       checker_input.c\
+       checker_free.c\
        commands_push.c\
        commands_base.c\
        commands_r.c\
        commands_sp.c\
-       init.c\
+       stack_operations.c\
        sort_operations.c\
 
 all:	push_swap
