@@ -1,0 +1,31 @@
+Aqui vou contar o que extrai dos estudos sobra as funções que serão usadas na minishell.
+
+strerror - Lari
+
+perror - Lari
+
+isatty - Lari
+
+ttyname - Lari
+
+ttyslot - Lari
+
+ioctl - Lari
+
+getenv - Lari
+
+tcsetattr - Lari
+
+tcgetattr - Lari
+
+tgetent - Lari
+
+tgetflag - Lari
+
+tgetnum - Lari
+
+tgetstr - Lari
+
+tgoto - Lari
+
+tputs - Lari
