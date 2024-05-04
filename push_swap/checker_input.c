@@ -6,7 +6,7 @@
 /*   By: lfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 16:38:29 by lfranco           #+#    #+#             */
-/*   Updated: 2024/04/24 12:32:29 by larissa          ###   ########.fr       */
+/*   Updated: 2024/05/01 06:28:43 by lfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,6 @@ void	checker_input(int ac, char **av)
 		else if (check_dup_and_sort(av) == 1)
 			put_error("Error");
 		else if (check_dup_and_sort(av) == 2)
-			return ;
+			exit(0);
 	}
 }

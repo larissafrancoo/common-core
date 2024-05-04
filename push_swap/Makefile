@@ -6,7 +6,7 @@
 #    By: lfranco <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/21 12:01:01 by lfranco           #+#    #+#              #
-#    Updated: 2024/04/24 12:32:00 by larissa          ###   ########.fr        #
+#    Updated: 2024/05/01 06:10:11 by lfranco          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ libft:
 	cd $(LIBRARY) && $(MAKE) && cp -v libft.a ../
 
 push_swap: libft
-	cc $(SRCS) libft.a -o $(NAME)
+	cc -g $(SRCS) libft.a -o $(NAME)
 
 clean:
 	cd $(LIBRARY) && $(MAKE) clean
