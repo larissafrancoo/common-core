@@ -1,13 +1,18 @@
 /*
- * Aqui vamos aprender como funciona as funções:
- * - readline		| char *readline(const char *prompt)				;
- * - rl_clear_history	| void rl_clear_history(void)					;
- * - rl_on_new_line	| void rl_on_new_line(void)					;
- * - rl_replace_line	| void rl_replace_line (const char *text, int clear_undo)	;
- * - rl_redisplay	| void rl_redisplay (void)					;
- * - add_history	| void add_history(const char *string)				.
+ * Aqui vamos aprender na prática e teoria sobre as funções:
+ * --------------------------------------------------------------------------------------
+ * | readline		| char *readline(const char *prompt)				|
+ * | rl_clear_history	| void rl_clear_history(void)					|
+ * | rl_on_new_line	| void rl_on_new_line(void)					|
+ * | rl_replace_line	| void rl_replace_line (const char *text, int clear_undo)	|
+ * | rl_redisplay	| void rl_redisplay (void)					|
+ * | add_history	| void add_history(const char *string)				|
+ * --------------------------------------------------------------------------------------
+ *
+ *
+ *
+ * !!! Necessário compilação a flag "-lreadline". !!!
  * Ambas ultilizam as bibliotecas "readline/readline.h" e "readline/history.h".
- * Necessário compilação com flags: "gcc arquivo.c -lreadline".
 */
 
 #include <readline/readline.h>
@@ -117,6 +122,7 @@ do usuário. No entanto, como não faz parte da biblioteca padrão C, é necess�
 biblioteca Readline esteja disponível no ambiente de desenvolvimento e que seu programa esteja
 corretamente vinculado a ela.
 
+/////////////////////////////////////////////////////////////////////////////////////////////////
 
 2. RL_CLEAR_HISTORY
 
@@ -156,6 +162,7 @@ histórico de comandos de um programa. Ela permite que os desenvolvedores gerenc
 histórico de comandos conforme necessário, proporcionando maior controle sobre a interação do
 usuário com o histórico de comandos.
 
+/////////////////////////////////////////////////////////////////////////////////////////////////
 
 3. RL_ON_NEW_LINE
 
@@ -210,6 +217,7 @@ atualizações da linha de comando considerem esse estado. Isso é especialmente
 onde a linha de comando precisa ser manipulada dinamicamente, proporcionando uma interação suave
 e consistente para o usuário.
 
+/////////////////////////////////////////////////////////////////////////////////////////////////
 
 4. RL_REPLACE_LINE
 
@@ -263,8 +271,9 @@ programaticamente o conteúdo da linha de comando atual. Ela oferece flexibilida
 desenvolvedores que precisam modificar dinamicamente a linha de comando com base em eventos
 específicos ou lógica de aplicação, melhorando a interação do usuário com a linha de comando.
 
+/////////////////////////////////////////////////////////////////////////////////////////////////
 
-4. RL_REDISPLAY
+5. RL_REDISPLAY
 
 A função 'rl_redisplay' faz parte da biblioteca GNU Readline e é utilizada para atualizar a
 exibição da linha de comando. Isso é útil quando a linha de comando foi modificada
@@ -298,12 +307,77 @@ estado interno do programa, proporcionando uma interface de usuário mais respon
 complementada dinamicamente com base na entrada do usuário.
 
 -> Pontos Importantes
-*
-/////////////////////////////////////////////////////////////////////////////////////////////////
--> Sintaxe
--> Parâmetros
--> Retorno
--> Descrição
--> Aplicações Comuns
--> Pontos Importantes
+
+*Eficácia Imediata: A função 'rl_redisplay' redesenha imediatamente a linha de comando no
+terminal, garantindo que quaisquer alterações feitas sejam visíveis ao usuário.
+*Uso com Outras Funções Readline: Frequentemente usada em conjunto com outras funções de
+Readline, como 'rl_replace_line', para manter a interface do usuário sincronizada com o estado
+interno da linha de comando.
+*Interatividade: Ideal para programas interativos onde a linha de comando pode mudar em resposta
+a eventos ou ações do usuário, assegurando que essas mudanças sejam imediatamente visíveis.
+
 -> Conclusão
+
+A função 'rl_redisplay' da biblioteca GNU Readline é uma ferramenta essencial para atualizar a
+exibição da linha de comando no terminal. Ela garante que quaisquer alterações feitas
+programaticamente na lnha de comando sejam imediatamente refletidas na interface do usuário,
+melhorando a interação e a responsividade do programa.
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+6. ADD_HISTORY
+
+A função 'add_history' faz parte da biblioteca GNU Readline e é ultilizada para adicionar uma
+nova entrada ao histórico de comandos. Isso permite que os comandos inseridos pelo usuário sejam
+armazenados e recuperados posteriormente, facilitando a navegação e repetição de comandos
+anteriores.
+
+-> Sintaxe
+
+void	add_history(const char *string);
+
+-> Parâmetros
+
+*string: Um ponteiro para a string que representa o comando a ser adicionado ao histórico.
+
+-> Retorno
+
+A função 'add_history' não retorna nenhum valor.
+
+-> Descrição
+
+A função 'add_history' adiciona a string fornecida ao histórico de comandos mantido pela
+biblioteca Readline. Isso é útil para armazenar comandos inseridos pelo usuário, permitindo que
+eles sejam acessados e reutilizados posteriormente usando as teclas de navegação do histórico
+(geralmente as teclas de seta para cima e para baixo).
+
+-> Aplicações Comuns
+
+*Armazenamento de Comandos do Usuário: Para armazenar comandos digitados pelo usuário, permitindo
+recuperação e reutilização.
+*Sessões Interativas: Em programas interativos, onde o histórico de comandos pode melhorar a
+usabilidade ao permitir que o usuário acesse comandos anteriores facilmente.
+*Desenvolvimento de Shells: Em shells personalizadas ou interfaces de linha de comando, onde o
+histórico de comandos é uma funcionalidade esperada.
+
+-> Pontos Importantes
+
+*Persistência do Histórico: Por padrão, o histórico de comandos existe apenas na memória durante
+a execução do programa. Para persistir o histórico entre sessões, você pode pesquisar funções como
+'write_history' e 'read_history'.
+*Memória: As entradas de histórico são armazenadas na memória. Certifique-se de gerenciar a
+memória adequadamente para evitar vazamentos, especialmente se você estiver manipulando grandes
+quantidades de histórico.
+*Duplicação de Comandos: Dependendo das configurações da Readline, comandos duplicados podem ser
+armazenados no histórico. Você pode configurar o comportamento para evitar duplicatas se
+desejado.
+
+-> Conclusão
+
+A função 'add_history' da bilioteca GNU Readline é uma ferramenta essencial para gerenciar o
+histórico de comandos em aplicativos de linha de comando interativos. Ela permite que os
+desenvolvedores armazenem e recuperem comandos de maneira eficiente, melhorando a experiência do
+usuário e facilitando a repetição de comandos anteriores.
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+*/
